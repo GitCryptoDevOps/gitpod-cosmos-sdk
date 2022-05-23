@@ -1,9 +1,9 @@
 # You can find the new timestamped tags here: https://hub.docker.com/r/gitpod/workspace-base/tags
-FROM gitpod/workspace-base:2022-04-26-07-40-59
+FROM gitpod/workspace-base:2022-05-20-05-44-40
 
 # Change your version here
 ENV GO_VERSION=1.17
-ENV IGNITE_VERSION=0.17.3
+ENV IGNITE_VERSION=0.21.2
 
 # For ref, see: https://github.com/gitpod-io/workspace-images/blob/61df77aad71689504112e1087bb7e26d45a43d10/chunks/lang-go/Dockerfile#L10
 ENV GOPATH=$HOME/go-packages
