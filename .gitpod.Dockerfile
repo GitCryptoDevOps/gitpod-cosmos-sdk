@@ -14,5 +14,5 @@ RUN curl -fsSL https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz | tar
 # Install ignite
 RUN curl https://get.ignite.com/cli@v${IGNITE_VERSION}! | sudo bash
 
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - \
+RUN curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash - \
     && sudo apt-get install -y nodejs
