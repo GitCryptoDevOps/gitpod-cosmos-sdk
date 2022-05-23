@@ -10,5 +10,8 @@ ENV GOROOT=$HOME/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 RUN curl -fsSL https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz | tar xzs
 
+# Install ignite
+RUN curl https://get.ignite.com/cli@v0.17.3! | sudo bash
+
 # NPM
 RUN npm install -g npm@7.10.0
