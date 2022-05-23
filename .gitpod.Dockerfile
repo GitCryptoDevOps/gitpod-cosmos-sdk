@@ -1,7 +1,7 @@
 FROM gitpod/workspace-full
 
 # Go
-ENV GO_VERSION=1.16.15
+ENV GO_VERSION=1.17
 ENV GOPATH=$HOME/go-packages
 ENV GOROOT=$HOME/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
