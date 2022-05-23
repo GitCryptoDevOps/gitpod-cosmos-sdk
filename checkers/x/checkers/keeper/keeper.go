@@ -7,32 +7,41 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	"github.com/alice/checkers/x/checkers/types"
-	// this line is used by starport scaffolding # ibc/keeper/import
+	
 )
 
 type (
 	Keeper struct {
-		cdc      codec.Marshaler
-		storeKey sdk.StoreKey
-		memKey   sdk.StoreKey
-		// this line is used by starport scaffolding # ibc/keeper/attribute
+		
+		cdc      	codec.BinaryCodec
+		storeKey 	sdk.StoreKey
+		memKey   	sdk.StoreKey
+		paramstore	paramtypes.Subspace
 		
 	}
 )
 
 func NewKeeper(
-    cdc codec.Marshaler,
+    cdc codec.BinaryCodec,
     storeKey,
     memKey sdk.StoreKey,
-    // this line is used by starport scaffolding # ibc/keeper/parameter
+	ps paramtypes.Subspace,
+    
     
 ) *Keeper {
+	// set KeyTable if it has not already been set
+	if !ps.HasKeyTable() {
+		ps = ps.WithKeyTable(types.ParamKeyTable())
+	}
+
 	return &Keeper{
-		cdc:      cdc,
-		storeKey: storeKey,
-		memKey:   memKey,
-		// this line is used by starport scaffolding # ibc/keeper/return
+		
+		cdc:      	cdc,
+		storeKey: 	storeKey,
+		memKey:   	memKey,
+		paramstore:	ps,
 		
 	}
 }
