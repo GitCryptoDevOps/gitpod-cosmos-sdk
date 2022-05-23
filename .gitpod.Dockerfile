@@ -11,8 +11,5 @@ ENV GOROOT=$HOME/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 RUN curl -fsSL https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz | tar xzs     && printf '%s\n' 'export GOPATH=/workspace/go'                       'export PATH=$GOPATH/bin:$PATH' > $HOME/.bashrc.d/300-go
 
-# Install ignite
-RUN curl -fsSL https://github.com/ignite-hq/cli/releases/download/v${IGNITE_VERSION}/starport_${IGNITE_VERSION}_linux_amd64.tar.gz | tar xzs
-
 # Install npm
 RUN npm install -g npm@7.10.0
